@@ -1,0 +1,14 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t tommy/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run tommy/docker-react npm run test -- --coverage
+
+  
+
+
+
